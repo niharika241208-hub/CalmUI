@@ -1,0 +1,139 @@
+
+
+/* =========================================
+   CALMUI - ADAPTIVE INTERFACE
+   Complete CSS
+========================================= */
+
+
+/* =========================================
+   1. LARGE TEXT
+========================================= */
+
+html.calmui-large-text body {
+  font-size: 120% !important;
+}
+
+html.calmui-large-text p,
+html.calmui-large-text li,
+html.calmui-large-text label,
+html.calmui-large-text input,
+html.calmui-large-text textarea,
+html.calmui-large-text button,
+html.calmui-large-text a,
+html.calmui-large-text span {
+  font-size: 1.1em !important;
+  line-height: 1.7 !important;
+}
+
+html.calmui-large-text h1 {
+  font-size: 2.2em !important;
+}
+
+html.calmui-large-text h2 {
+  font-size: 1.8em !important;
+}
+
+html.calmui-large-text h3 {
+  font-size: 1.5em !important;
+}
+
+
+/* =========================================
+   2. INCREASED SPACING
+========================================= */
+
+html.calmui-extra-spacing body {
+  line-height: 1.8 !important;
+}
+
+html.calmui-extra-spacing p,
+html.calmui-extra-spacing li,
+html.calmui-extra-spacing label {
+  line-height: 2 !important;
+  margin-bottom: 1.2em !important;
+}
+
+html.calmui-extra-spacing button,
+html.calmui-extra-spacing input,
+html.calmui-extra-spacing select,
+html.calmui-extra-spacing textarea {
+  padding: 12px !important;
+  margin: 5px !important;
+}
+
+
+/* =========================================
+   3. REDUCE MOTION
+========================================= */
+
+html.calmui-reduce-motion *,
+html.calmui-reduce-motion *::before,
+html.calmui-reduce-motion *::after {
+  animation-duration: 0.01ms !important;
+  animation-iteration-count: 1 !important;
+  transition-duration: 0.01ms !important;
+  scroll-behavior: auto !important;
+}
+
+
+/* =========================================
+   4. SIMPLIFIED LAYOUT
+========================================= */
+
+/* Improve general readability */
+
+html.calmui-simple-layout body {
+  line-height: 1.8 !important;
+}
+
+/* Improve main content readability */
+
+html.calmui-simple-layout main,
+html.calmui-simple-layout article,
+html.calmui-simple-layout [role="main"] {
+  line-height: 1.85 !important;
+}
+
+/* Improve paragraph readability */
+
+html.calmui-simple-layout p {
+  max-width: 70ch !important;
+  line-height: 1.9 !important;
+  margin-bottom: 1.4em !important;
+}
+
+/* Improve heading separation */
+
+html.calmui-simple-layout h1,
+html.calmui-simple-layout h2,
+html.calmui-simple-layout h3,
+html.calmui-simple-layout h4 {
+  line-height: 1.4 !important;
+  margin-top: 1.2em !important;
+  margin-bottom: 0.8em !important;
+}
+
+/* Improve list readability */
+
+html.calmui-simple-layout li {
+  line-height: 1.8 !important;
+  margin-bottom: 0.5em !important;
+}
+
+/* Improve blockquote readability */
+
+html.calmui-simple-layout blockquote {
+  line-height: 1.8 !important;
+  margin-top: 1em !important;
+  margin-bottom: 1em !important;
+  padding-left: 1em !important;
+}
+
+/* Improve image spacing */
+
+html.calmui-simple-layout figure {
+  margin-top: 1.5em !important;
+  margin-bottom: 1.5em !important;
+}
+
