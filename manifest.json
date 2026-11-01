@@ -9,13 +9,17 @@
     "storage"
   ],
   "host_permissions": [
-    "http://*/*",
-    "https://*/*"
-  ],
+  "http://*/*",
+  "https://*/*",
+  "http://localhost:3000/*"
+],
   "action": {
     "default_popup": "popup.html",
     "default_title": "CalmUI"
   },
+  "background": {
+  "service_worker": "background.js"
+},
   "content_scripts": [
     {
       "matches": [
