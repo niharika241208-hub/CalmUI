@@ -1,0 +1,35 @@
+
+
+{
+  "manifest_version": 3,
+  "name": "CalmUI - Adaptive Interface",
+  "version": "1.0.0",
+  "description": "Customize websites to match your sensory and cognitive preferences.",
+  "permissions": [
+    "storage"
+  ],
+  "host_permissions": [
+    "http://*/*",
+    "https://*/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "CalmUI"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "http://*/*",
+        "https://*/*"
+      ],
+      "js": [
+        "content.js"
+      ],
+      "css": [
+        "content.css"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
+

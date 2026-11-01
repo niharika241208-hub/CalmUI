@@ -1,10 +1,12 @@
 const express = require("express");
+const axios = require("axios");
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
 
+// Test whether the backend is running
 app.get("/api/health", (req, res) => {
     res.json({
         status: "ok",
@@ -12,6 +14,7 @@ app.get("/api/health", (req, res) => {
     });
 });
 
+// Simplify text
 app.post("/api/simplify", (req, res) => {
     const { text } = req.body;
 
@@ -25,6 +28,24 @@ app.post("/api/simplify", (req, res) => {
         original: text,
         simplified: "This is a simplified version of the text."
     });
+});
+
+// Send interaction data to the AI
+app.post("/api/recommend-ui", async (req, res) => {
+    try {
+        const response = await axios.post(
+            "http://localhost:8000/api/recommend-ui",
+            req.body
+        );
+
+        res.json(response.data);
+    } catch (error) {
+        console.error("AI service error:", error.message);
+
+        res.status(500).json({
+            error: "Could not connect to AI service"
+        });
+    }
 });
 
 app.listen(PORT, () => {
