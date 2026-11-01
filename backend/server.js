@@ -1,11 +1,14 @@
 const express = require("express");
 const axios = require("axios");
+const cors = require("cors");
 
 const app = express();
 const PORT = 3000;
 
 app.use(express.json());
-
+app.use(cors({
+    origin: true
+}));
 // Test whether the backend is running
 app.get("/api/health", (req, res) => {
     res.json({

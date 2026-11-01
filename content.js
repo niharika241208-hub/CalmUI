@@ -498,3 +498,51 @@ chrome.storage.onChanged.addListener(
   console.log("CalmUI Clear Language interface loaded.");
 
 })();
+// =========================================
+// PART 12: AI ADAPTATION
+// =========================================
+
+async function getAIRecommendation() {
+  try {
+    const response = await fetch("http://localhost:3000/api/recommend-ui", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+        misclick_count: 5,
+        task_completion_time_sec: 40,
+        backtrack_count: 3,
+        help_requests: 2,
+        feature_usage_count: 4,
+        sensory_load_proxy: 7
+      })
+    });
+
+    const result = await response.json();
+
+    console.log("CalmUI AI recommendation:", result);
+
+    if (result.recommended_ui_adaptation === "larger_buttons") {
+      document.documentElement.classList.add("calmui-large-text");
+    }
+
+    if (result.recommended_ui_adaptation === "extra_spacing") {
+      document.documentElement.classList.add("calmui-extra-spacing");
+    }
+
+    if (result.recommended_ui_adaptation === "reduce_motion") {
+      document.documentElement.classList.add("calmui-reduce-motion");
+    }
+
+    if (result.recommended_ui_adaptation === "simplify_layout") {
+      document.documentElement.classList.add("calmui-simple-layout");
+    }
+
+  } catch (error) {
+    console.error("CalmUI AI connection failed:", error);
+  }
+}
+
+getAIRecommendation();
+
